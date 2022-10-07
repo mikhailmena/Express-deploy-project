@@ -9,7 +9,7 @@ app.use(cors())
 app.use(bodyParser())
 app.use(express.static('public'))
 const client = new Client({
-    connectionString: POSTGRES_CONNECTION_STRING + "?ssl=true",
+    connectionString: POST_CONNECTION_STRING + "?ssl=true",
     port: process.env.PORT
     
 });
