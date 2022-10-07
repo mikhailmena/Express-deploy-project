@@ -9,7 +9,8 @@ app.use(cors())
 app.use(bodyParser())
 app.use(express.static('public'))
 const client = new Client({
-    connectionString:"postgres://postgres:docker@localhost:5432/memo_db"
+    connectionString:"postgres://commentsdb_user:ZeWq9buemwgjLXmPWvgONvHTmsqqFWPm@dpg-cd089sarrk0e0mqqr610-a.oregon-postgres.render.com/commentsdb"
+    
 });
 client.connect();
 
