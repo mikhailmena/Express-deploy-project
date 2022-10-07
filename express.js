@@ -3,7 +3,7 @@ const app = express();
 const PORT = 8000;
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
+const config = require('./config.js')[process.env.NODE_ENV||"dev"]
 const {Client} = require('pg');
 app.use(cors())
 app.use(bodyParser())
