@@ -7,7 +7,7 @@ $.get(`${ApiURL}/api/comments`), (data) => {
         $('#display').prepend(data[i].description)
     }
      //prepends data from get call to display ---- I need to make a for loop to display all of it
-});
+};
 
 const formSub = document.querySelector('.form'); //selects the form and puts it in a variable
 
