@@ -24,9 +24,6 @@ formSub.addEventListener('submit', event => { //adds event listener
     
     console.log(formInput)
     // location.reload()
-    
-    
-
 })
     
 
