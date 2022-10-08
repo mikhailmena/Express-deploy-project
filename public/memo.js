@@ -1,5 +1,5 @@
 // const { response } = require("express");
-let ApiURL = ENV == "dev" ? "http://localhost:8000" : "https://express-ui-0iip.onrender.com";
+// let ApiURL = ENV == "dev" ? "http://localhost:8000" : "https://express-ui-0iip.onrender.com";
 $.get("https://express-api-7mpi.onrender.com", (data) => {
     console.log(data)
     // let $newDiv ' $'

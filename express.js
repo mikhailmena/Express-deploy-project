@@ -16,8 +16,8 @@ const client = new Client({
 });
 client.connect();
 
-app.get('/api/memo', (req, res) => {
-    client.query('SELECT * FROM memo_table').then((result) => {
+app.get('https://express-api-7mpi.onrender.com', (req, res) => {
+    client.query('SELECT * FROM comments').then((result) => {
        res.setHeader('Content-Type', 'application/json');
        res.send(result.rows);  
     })
@@ -25,7 +25,7 @@ app.get('/api/memo', (req, res) => {
 
 app.post('/api/memo', (req, res) => {
     let newComment = req.body
-    client.query("INSERT INTO memo_table(description) VALUES ($1);",[newComment.description]).then((data)=>{
+    client.query("INSERT INTO comments(description) VALUES ($1);",[newComment.description]).then((data)=>{
         res.send(newComment)
         
     });
