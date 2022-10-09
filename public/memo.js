@@ -17,7 +17,7 @@ formSub.addEventListener('submit', event => { //adds event listener
     const formData = new FormData(formSub); //takes all data from form
     const formInput = Object.fromEntries(formData); //puts that dat into a 
     
-    fetch('https://express-api-7mpi.onrender.com', {method: 'POST', headers: {'Content-Type':'application/json'}
+    fetch('https://express-ui-0iip.onrender.com', {method: 'POST', headers: {'Content-Type':'application/json'}
     ,body: JSON.stringify(formInput)}) //turns the form data into a string
     .then(response => {
     $('#display').append(formInput.description) //appends stringified form data to display div
