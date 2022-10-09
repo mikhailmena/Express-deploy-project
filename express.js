@@ -16,14 +16,14 @@ const client = new Client({
 });
 client.connect();
 
-app.get('/api/memo', (req, res) => {
+app.get('https://express-api-7mpi.onrender.com', (req, res) => {
     client.query('SELECT * FROM comments').then((result) => {
        res.setHeader('Content-Type', 'application/json');
        res.send(result.rows);  
     })
 })
 
-app.post('/api/memo', (req, res) => {
+app.post('https://express-api-7mpi.onrender.com', (req, res) => {
     let newComment = req.body
     client.query("INSERT INTO comments(description) VALUES ($1);",[newComment.description]).then((data)=>{
         res.send(newComment)
@@ -31,7 +31,7 @@ app.post('/api/memo', (req, res) => {
     });
 });
 
-app.delete('/api/memo',(req, res)=>{
+app.delete('https://express-api-7mpi.onrender.com',(req, res)=>{
     let id = req.body.id; 
     client.query('DELETE FROM memo_table WHERE memo_id = $1',[id]).then((data) =>{
         
