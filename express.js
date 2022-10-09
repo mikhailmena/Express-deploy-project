@@ -16,7 +16,7 @@ const client = new Client({
 });
 client.connect();
 
-app.get('postgres://commentsdb_user:ZeWq9buemwgjLXmPWvgONvHTmsqqFWPm@dpg-cd089sarrk0e0mqqr610-a.oregon-postgres.render.com/commentsdb', (req, res) => {
+app.get('/api/memo', (req, res) => {
     client.query('SELECT * FROM comments').then((result) => {
        res.setHeader('Content-Type', 'application/json');
        res.send(result.rows);  
