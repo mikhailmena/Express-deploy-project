@@ -5,12 +5,15 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('./config')[process.env.NODE_ENV||"dev"]
 const {Client} = require('pg');
+const { slides } = require('googleapis/build/src/apis/slides');
 const PORT = config.port;
 app.use(cors())
 app.use(bodyParser())
 app.use(express.static('public'))
 const client = new Client({
-    connectionString: 'postgres://commentsdb_user:ZeWq9buemwgjLXmPWvgONvHTmsqqFWPm@dpg-cd089sarrk0e0mqqr610-a.oregon-postgres.render.com/commentsdb' + "?ssl=true",
+    connectionString: 'postgres://commentsdb_user:ZeWq9buemwgjLXmPWvgONvHTmsqqFWPm@dpg-cd089sarrk0e0mqqr610-a.oregon-postgres.render.com/commentsdb', 
+    
+    ssl: {resolveObjectURL:false},
     port: process.env.PORT
     
 });
@@ -31,7 +34,7 @@ app.post('/api/memo', (req, res) => {
     });
 });
 
-app.delete('https://express-api-7mpi.onrender.com/api/memo',(req, res)=>{
+app.delete('/api/memo',(req, res)=>{
     let id = req.body.id; 
     client.query('DELETE FROM memo_table WHERE memo_id = $1',[id]).then((data) =>{
         
