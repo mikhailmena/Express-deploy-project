@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('./config')[process.env.NODE_ENV||"dev"]
 const {Client} = require('pg');
-const { slides } = require('googleapis/build/src/apis/slides');
+
 const PORT = config.port;
 app.use(cors())
 app.use(bodyParser())
